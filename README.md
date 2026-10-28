@@ -9,10 +9,6 @@ This repository combines the point-cloud preprocessing/IFC enrichment workflow w
 3. Open `notebooks/filter_clusters.ipynb` to apply the original cluster-size filter and export `filtered_cluster_attributes.csv` to `data/output/`.
 4. Open the Blender project containing the IFC host elements in **Blender 4.5.x**. Run `blender/main.py` from Blender's Python environment (or configure it as a script in Blender). The script reads `enriched_point_cloud.csv` and `filtered_cluster_attributes.csv` from `data/output/` and writes `updated_4.ifc` there.
 
-## Damage representation
-
-`create_point_cluster_as_squares()` is preserved in `blender/damage_modeling_points_projection.py`. Its default `size=0.01` is a half-side length, so each square has a side length of `0.02 m` (20 mm). Squares are planar faces at each point's Z coordinate and can overlap. The Blender entry point explicitly uses this square-based representation rather than convex-hull patches.
-
 ## Requirements
 
 - Python packages listed in `requirements.txt` for notebook processing.
